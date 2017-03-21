@@ -11,16 +11,25 @@ class PlacesAutocompleteBasic extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { autocompleteItems: [] }
+    this.state = {
+      autocompleteItems: [],
+      value: this.props.value || '',
+    }
 
     this.autocompleteCallback = this.autocompleteCallback.bind(this)
     this.handleInputKeyDown = this.handleInputKeyDown.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.value = this.value.bind(this)
+    this.onBlur = this.onBlur.bind(this)
   }
 
   componentDidMount() {
     this.autocompleteService = new google.maps.places.AutocompleteService()
     this.autocompleteOK = google.maps.places.PlacesServiceStatus.OK
+  }
+
+  value() {
+    return this.props.forceItemSelection ? this.state.value : this.props.value;
   }
 
   autocompleteCallback(predictions, status) {
@@ -56,6 +65,11 @@ class PlacesAutocompleteBasic extends Component {
 
   handleSelect(address, placeId) {
     this.props.onSelect ? this.props.onSelect(address, placeId) : this.props.onChange(address)
+    if (this.props.forceItemSelection) {
+      this.setState({
+        value: address,
+      })
+    }
   }
 
   getActiveItem() {
@@ -66,6 +80,11 @@ class PlacesAutocompleteBasic extends Component {
     const activeName = this.state.autocompleteItems.find(item => item.index === index).suggestion
     this.setActiveItemAtIndex(index)
     this.props.onChange(activeName)
+    if (this.props.forceItemSelection) {
+      this.setState({
+        value: activeName,
+      })
+    }
   }
 
   handleEnterKey() {
@@ -149,7 +168,13 @@ class PlacesAutocompleteBasic extends Component {
   }
 
   handleInputChange(event) {
-    this.props.onChange(event.target.value)
+    if (this.props.forceItemSelection) {
+      this.setState({
+        value: event.target.value,
+      })
+    } else {
+      this.props.onChange(event.target.value)
+    }
     if (!event.target.value) {
       this.clearAutocomplete()
       return
@@ -162,6 +187,15 @@ class PlacesAutocompleteBasic extends Component {
       return { ...defaultStyles.autocompleteItemActive, ...this.props.styles.autocompleteItemActive }
     } else {
       return {}
+    }
+  }
+
+  onBlur() {
+    this.clearAutocomplete()
+    if (this.props.forceItemSelection) {
+      this.setState({
+        value: this.props.value,
+      })
     }
   }
 
@@ -194,10 +228,10 @@ class PlacesAutocompleteBasic extends Component {
         type="text"
         placeholder={placeholder}
         className={classNames.input || ''}
-        value={value}
+        value={this.value()}
         onChange={this.handleInputChange}
         onKeyDown={this.handleInputKeyDown}
-        onBlur={() => this.clearAutocomplete()}
+        onBlur={this.onBlur}
         style={styles.input}
         autoFocus={autoFocus}
         name={inputName || ''}

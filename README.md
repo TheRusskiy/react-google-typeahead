@@ -112,6 +112,7 @@ export default SimpleForm
 * autoFocus
 * inputName
 * inputId
+* forceItemSelection
 
 #### value
 Type: `String`,
@@ -345,6 +346,11 @@ Default: Empty String
 Type: `String`
 Required: `false`
 Default: Empty String
+
+#### forceItemSelection
+Type: `Boolean`
+Required: `false`
+Default: `false`
 
 ### `geocodeByAddress` API
 
