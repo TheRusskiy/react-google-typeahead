@@ -294,13 +294,13 @@ var PlacesAutocompleteBasic = function (_Component) {
           classNames = _props.classNames,
           placeholder = _props.placeholder,
           styles = _props.styles,
-          value = _props.value,
           autoFocus = _props.autoFocus,
           inputName = _props.inputName,
-          inputId = _props.inputId;
+          inputId = _props.inputId,
+          inputElement = _props.inputElement;
 
-      return _react2.default.createElement('input', {
-        type: 'text',
+      var props = {
+        type: "text",
         placeholder: placeholder,
         className: classNames.input || '',
         value: this.value(),
@@ -311,7 +311,8 @@ var PlacesAutocompleteBasic = function (_Component) {
         autoFocus: autoFocus,
         name: inputName || '',
         id: inputId || ''
-      });
+      };
+      return _react2.default.createElement('inputElement', props);
     }
   }, {
     key: 'render',

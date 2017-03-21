@@ -49,6 +49,7 @@ PlacesAutocomplete.propTypes = {
   placeholder: _react2.default.PropTypes.string,
   autoFocus: _react2.default.PropTypes.bool,
   inputName: _react2.default.PropTypes.string,
+  inputElement: _react2.default.PropTypes.element,
   inputId: _react2.default.PropTypes.string,
   autocompleteItem: _react2.default.PropTypes.func,
   classNames: _react2.default.PropTypes.shape({
@@ -92,7 +93,8 @@ PlacesAutocomplete.defaultProps = {
   },
   styles: {},
   options: {},
-  typeAhead: false
+  typeAhead: false,
+  inputElement: _react2.default.createElement('input', null)
 };
 
 exports.default = PlacesAutocomplete;

@@ -222,21 +222,22 @@ class PlacesAutocompleteBasic extends Component {
   }
 
   renderInput() {
-    const { classNames, placeholder, styles, value, autoFocus, inputName, inputId } = this.props
+    const { classNames, placeholder, styles, autoFocus, inputName, inputId, inputElement } = this.props
+    const props = {
+      type: "text",
+      placeholder: placeholder,
+      className: classNames.input || '',
+      value: this.value(),
+      onChange: this.handleInputChange,
+      onKeyDown: this.handleInputKeyDown,
+      onBlur: this.onBlur,
+      style: styles.input,
+      autoFocus: autoFocus,
+      name: inputName || '',
+      id: inputId || '',
+    }
     return (
-      <input
-        type="text"
-        placeholder={placeholder}
-        className={classNames.input || ''}
-        value={this.value()}
-        onChange={this.handleInputChange}
-        onKeyDown={this.handleInputKeyDown}
-        onBlur={this.onBlur}
-        style={styles.input}
-        autoFocus={autoFocus}
-        name={inputName || ''}
-        id={inputId || ''}
-      />
+      <inputElement {...props} />
     )
   }
 

@@ -128,6 +128,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  placeholder: _react2.default.PropTypes.string,
 	  autoFocus: _react2.default.PropTypes.bool,
 	  inputName: _react2.default.PropTypes.string,
+	  inputElement: _react2.default.PropTypes.element,
 	  inputId: _react2.default.PropTypes.string,
 	  autocompleteItem: _react2.default.PropTypes.func,
 	  classNames: _react2.default.PropTypes.shape({
@@ -171,7 +172,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  styles: {},
 	  options: {},
-	  typeAhead: false
+	  typeAhead: false,
+	  inputElement: _react2.default.createElement('input', null)
 	};
 	
 	exports.default = PlacesAutocomplete;
@@ -5074,13 +5076,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          classNames = _props.classNames,
 	          placeholder = _props.placeholder,
 	          styles = _props.styles,
-	          value = _props.value,
 	          autoFocus = _props.autoFocus,
 	          inputName = _props.inputName,
-	          inputId = _props.inputId;
+	          inputId = _props.inputId,
+	          inputElement = _props.inputElement;
 	
-	      return _react2.default.createElement('input', {
-	        type: 'text',
+	      var props = {
+	        type: "text",
 	        placeholder: placeholder,
 	        className: classNames.input || '',
 	        value: this.value(),
@@ -5091,7 +5093,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        autoFocus: autoFocus,
 	        name: inputName || '',
 	        id: inputId || ''
-	      });
+	      };
+	      return _react2.default.createElement('inputElement', props);
 	    }
 	  }, {
 	    key: 'render',
