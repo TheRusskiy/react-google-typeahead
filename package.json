@@ -4,7 +4,6 @@
   "description": "A React component for Google Maps Places Autocomplete",
   "main": "dist/index.js",
   "scripts": {
-    "commit": "git-cz",
     "watch:test": "npm t -- -w",
     "test": "mocha src/tests/index.spec.js --compilers js:babel-register",
     "prebuild": "rimraf dist",
@@ -12,8 +11,7 @@
     "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postpublish": "npm run deploy"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
