@@ -1,6 +1,6 @@
 {
   "name": "react-google-typeahead",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.1",
   "description": "A React component for Google Maps Places Autocomplete",
   "main": "dist/index.js",
   "scripts": {
