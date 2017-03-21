@@ -79,10 +79,10 @@ class Demo extends React.Component {
     return (
       <div className='page-wrapper'>
         <div className='container'>
-          <h1 className='display-3'>react-places-autocomplete <i className='fa fa-map-marker header'/></h1>
+          <h1 className='display-3'>react-google-typeahead <i className='fa fa-map-marker header'/></h1>
           <p className='lead'>A React component to build a customized UI for Google Maps Places Autocomplete</p>
           <hr />
-          <a href='https://github.com/kenny-hibino/react-places-autocomplete' className='Demo__github-link' target="_blank" >
+          <a href='https://github.com/kenny-hibino/react-google-typeahead' className='Demo__github-link' target="_blank" >
             <span className='fa fa-github Demo__github-icon'></span>
             &nbsp;View on GitHub
           </a>

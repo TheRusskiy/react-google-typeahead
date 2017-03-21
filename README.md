@@ -1,11 +1,11 @@
-# react-places-autocomplete
+# react-google-typeahead
 
-A React component to build a customized UI for Google Maps Places Autocomplete ([Demo](https://kenny-hibino.github.io/react-places-autocomplete/))
+A React component to build a customized UI for Google Maps Places Autocomplete ([Demo](https://kenny-hibino.github.io/react-google-typeahead/))
 
 
-[![travis build](https://img.shields.io/travis/kenny-hibino/react-places-autocomplete.svg?style=flat-square)](https://travis-ci.org/kenny-hibino/react-places-autocomplete)
-[![MIT-License](https://img.shields.io/npm/l/react-places-autocomplete.svg?style=flat-square)]()
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square)](https://gitter.im/react-places-autocomplete/Lobby)
+[![travis build](https://img.shields.io/travis/kenny-hibino/react-google-typeahead.svg?style=flat-square)](https://travis-ci.org/kenny-hibino/react-google-typeahead)
+[![MIT-License](https://img.shields.io/npm/l/react-google-typeahead.svg?style=flat-square)]()
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square)](https://gitter.im/react-google-typeahead/Lobby)
 
 ### Features
 1. Enable you to easily build a customized autocomplete dropdown powered by Google Maps Places Library
@@ -16,23 +16,23 @@ A React component to build a customized UI for Google Maps Places Autocomplete (
 To install the stable version
 
 ```sh
-npm install react-places-autocomplete --save
+npm install react-google-typeahead --save
 ```
 
 The React component is exported as a default export
 
 ```js
-import PlacesAutocomplete from 'react-places-autocomplete'
+import PlacesAutocomplete from 'react-google-typeahead'
 ```
 
 `geocodeByAddress` and `geocodeByPlaceId` utility functions are named exports
 
 ```js
-import { geocodeByAddress, geocodeByPlaceId } from 'react-places-autocomplete'
+import { geocodeByAddress, geocodeByPlaceId } from 'react-google-typeahead'
 ```
 
 ### Demo
-See live demo: [kenny-hibino.github.io/react-places-autocomplete/](https://kenny-hibino.github.io/react-places-autocomplete/)
+See live demo: [kenny-hibino.github.io/react-google-typeahead/](https://kenny-hibino.github.io/react-google-typeahead/)
 
 To build the example locally, clone this repo and then run:
 
@@ -54,7 +54,7 @@ Declare your PlacesAutocomplete component using React component
 
 ```js
 import React from 'react'
-import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+import PlacesAutocomplete, { geocodeByAddress } from 'react-google-typeahead'
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -377,7 +377,7 @@ Second argument is an object with `lat` and `lng` keys
 Third argument (optional) is entire payload from Google API
 
 ```js
-import { geocodeByAddress } from 'react-places-autocomplete'
+import { geocodeByAddress } from 'react-google-typeahead'
 
 geocodeByAddress('Los Angeles, CA', (error, { lat, lng }, results) => {
   if (error) { return }
@@ -412,7 +412,7 @@ Second argument is an object with `lat` and `lng` keys
 Third argument (optional) is entire payload from Google API
 
 ```js
-import { geocodeByPlaceId } from 'react-places-autocomplete'
+import { geocodeByPlaceId } from 'react-google-typeahead'
 
 geocodeByPlaceId('ChIJE9on3F3HwoAR9AhGJW_fL-I', (error, { lat, lng }, results) => {
   if (error) { return }
@@ -423,7 +423,7 @@ geocodeByPlaceId('ChIJE9on3F3HwoAR9AhGJW_fL-I', (error, { lat, lng }, results) =
 ```
 ### Discussion
 
-Join us on [Gitter](https://gitter.im/react-places-autocomplete/Lobby) if you are interested in contributing!
+Join us on [Gitter](https://gitter.im/react-google-typeahead/Lobby) if you are interested in contributing!
 
 ### License
 

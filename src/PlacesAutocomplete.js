@@ -1,7 +1,7 @@
 /*
 * Copyright (c) 2017 Ken Hibino.
 * Licensed under the MIT License (MIT).
-* See https://kenny-hibino.github.io/react-places-autocomplete
+* See https://kenny-hibino.github.io/react-google-typeahead
 */
 
 import React from 'react'
@@ -62,7 +62,7 @@ PlacesAutocomplete.propTypes = {
 
 PlacesAutocomplete.defaultProps = {
   clearItemsOnError: false,
-  onError: (status) => console.error('[react-places-autocomplete]: error happened when fetching data from Google Maps API.\nPlease check the docs here (https://developers.google.com/maps/documentation/javascript/places#place_details_responses)\nStatus: ', status),
+  onError: (status) => console.error('[react-google-typeahead]: error happened when fetching data from Google Maps API.\nPlease check the docs here (https://developers.google.com/maps/documentation/javascript/places#place_details_responses)\nStatus: ', status),
   placeholder: 'Address',
   autoFocus: false,
   classNames: {},

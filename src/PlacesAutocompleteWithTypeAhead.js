@@ -1,7 +1,7 @@
 /*
 * Copyright (c) 2017 Ken Hibino.
 * Licensed under the MIT License (MIT).
-* See https://kenny-hibino.github.io/react-places-autocomplete
+* See https://kenny-hibino.github.io/react-google-typeahead
 */
 
 import React, { Component } from 'react'
